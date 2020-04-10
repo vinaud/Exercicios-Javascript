@@ -16,11 +16,12 @@ const sreaddir = (path) => {
 }
 
 sreaddir('./')
+.then((files) => {
+    files.forEach(file =>{
+        console.log(file);
+    })
+    return sreaddir('./FullStackLab');})
 .then((files) => files.forEach(file =>{console.log(file)}))
 .catch((error) => console.log(error));
 
 
-//outra maneira
-fs.readdirSync('./').forEach(file => {
-    console.log(file);
-  });
